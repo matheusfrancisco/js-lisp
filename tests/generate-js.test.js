@@ -19,7 +19,7 @@ describe(transpileToJs, () => {
       ],
     };
 
-    expect(toJavaScript(ast)).toBe('add(2, 3, subtract(5, 4))');
+    expect(transpileToJs(ast)).toBe('add(2, 3, subtract(5, 4))');
   });
 
   it('should support variables', () => {
@@ -29,6 +29,6 @@ describe(transpileToJs, () => {
       assignment: { type: 'NumericLiteral', value: 2 },
     };
 
-    expect(toJavaScript(ast)).toBe('let x = 2;');
+    expect(transpileToJs(ast)).toBe('let x = 2;');
   });
 });
