@@ -160,6 +160,8 @@ const parse = tokens => {
 };
 
 // evaluate the ast tree
+//
+const last = collection => collection[collection.length - 1];
 const apply = node => {
   const fn = environment[node.name];
   const args = node.arguments.map(evaluate);
@@ -178,14 +180,16 @@ const getId = node => {
   return id;
 };
 
-const evaluate = (node) => {
-  if (node.type === 'CallExpression') {
-    return apply(node)
-  }
-  if (node.type === 'Identifier') return getId(node);
-  if(node.type === 'NumericLiteral') return node.value;
+const define = node => {
+  environment[node.identifier.name] = node.assignment.value;
+};
+
+const evaluate = node => {
+  if (node.type === 'VariableDeclaration') return define(node);
+  if (node.type === 'CallExpression') return apply(node);
+  if (node.type === 'Identifier') return getIdentifier(node);
   if (node.value) return node.value;
-}
+};
 
 module.exports = {
   tokenize,
