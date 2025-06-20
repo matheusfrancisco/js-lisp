@@ -1,4 +1,12 @@
 # Small LISP Dialect
 
 
-Compile to javascript
+To run: 
+```bash
+npm i
+npm run repl
+```
+
+[](./repl.jpg)
+
+

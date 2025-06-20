@@ -1,6 +1,7 @@
 const {prompt} = require('inquirer');
 const chalk = require('chalk');
 const {tokenize, parse, evaluate} = require('./core');
+const {traverse} = require('./traversal');
 
 const pipe = (...funcs) => value =>
   funcs.reduce((value, func) => func(value), value);
