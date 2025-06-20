@@ -170,11 +170,21 @@ const apply = node => {
   return fn(...args);
 }
 
+const getId = node => {
+  const id = environment[node.name];
+  if (typeof id === 'undefined') {
+    throw new ReferenceError(`Identifier ${node.name} is not defined`);
+  }
+  return id;
+};
+
 const evaluate = (node) => {
   if (node.type === 'CallExpression') {
     return apply(node)
   }
+  if (node.type === 'Identifier') return getId(node);
   if(node.type === 'NumericLiteral') return node.value;
+  if (node.value) return node.value;
 }
 
 module.exports = {

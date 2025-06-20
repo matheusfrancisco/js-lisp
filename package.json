@@ -17,10 +17,23 @@
     "@babel/plugin-proposal-export-default-from": "^7.27.1",
     "@babel/plugin-transform-modules-commonjs": "^7.27.1",
     "babel-jest": "^30.0.2",
-    "chalk": "^5.4.1",
+    "chalk": "^2.4.2",
+    "inquirer": "^6.3.1",
     "jest": "^30.0.2",
     "lodash": "^4.17.21",
     "minimist": "^1.2.8",
     "mock-fs": "^5.5.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testRegex": "^.+\\.test.jsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
