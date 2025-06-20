@@ -1,0 +1,26 @@
+{
+  "name": "js-scheme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "repl": "node src/repl.js",
+    "compile": "node src/core.js",
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/generator": "^7.27.5",
+    "@babel/node": "^7.27.1",
+    "@babel/plugin-proposal-export-default-from": "^7.27.1",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "babel-jest": "^30.0.2",
+    "chalk": "^5.4.1",
+    "jest": "^30.0.2",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.8",
+    "mock-fs": "^5.5.0"
+  }
+}
