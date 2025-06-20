@@ -7,6 +7,6 @@ npm i
 npm run repl
 ```
 
-[](./repl.jpg)
+![](./repl.jpg)
 
 
